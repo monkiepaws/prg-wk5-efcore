@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Loan]
+(
+	[StudentId] NVARCHAR(50) NOT NULL,
+	[ISBN] NVARCHAR(50) NOT NULL,
+    CONSTRAINT [FK_Loan_To_Student] FOREIGN KEY ([StudentId]) REFERENCES [Student]([StudentId]), 
+    CONSTRAINT [FK_Loan_To_Book] FOREIGN KEY ([ISBN]) REFERENCES [Book]([ISBN]), 
+    CONSTRAINT [PK_Loan] PRIMARY KEY ([ISBN]) 
+)
